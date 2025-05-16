@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Adventure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Nature Adventure</h1>
+        <nav>
+            <a href="#flowers">Flowers</a>
+            <a href="#trees">Trees</a>
+            <a href="#birds">Birds</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <h2>Explore the Beauty of Mountains</h2>
+        <p>Discover beautiful flowers, majestic trees, and colorful birds in the hills.</p>
+    </section>
+    <section id="flowers" class="gallery-section">
+        <h2>Beautiful Flowers</h2>
+        <div class="gallery" id="flowers-gallery">
+            <!-- Images will be added by JavaScript -->
+        </div>
+    </section>
+    <section id="trees" class="gallery-section">
+        <h2>Majestic Trees</h2>
+        <div class="gallery" id="trees-gallery">
+            <!-- Images will be added by JavaScript -->
+        </div>
+    </section>
+    <section id="birds" class="gallery-section">
+        <h2>Colorful Birds</h2>
+        <div class="gallery" id="birds-gallery">
+            <!-- Images will be added by JavaScript -->
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Nature Adventure. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+// Sample image arrays (replace with your own images in 'images/' folder)
+const flowers = [
+    'images/flower1.jpg',
+    'images/flower2.jpg',
+    'images/flower3.jpg'
+];
+const trees = [
+    'images/tree1.jpg',
+    'images/tree2.jpg',
+    'images/tree3.jpg'
+];
+const birds = [
+    'images/bird1.jpg',
+    'images/bird2.jpg',
+    'images/bird3.jpg'
+];
+
+// Function to load images dynamically
+function loadGallery(images, galleryId) {
+    const gallery = document.getElementById(galleryId);
+    images.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = 'Nature Adventure Photo';
+        gallery.appendChild(img);
+    });
+}
+
+loadGallery(flowers, 'flowers-gallery');
+loadGallery(trees, 'trees-gallery');
+loadGallery(birds, 'birds-gallery');
